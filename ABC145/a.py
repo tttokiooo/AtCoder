@@ -1,3 +1,4 @@
+# https://atcoder.jp/contests/abc145/tasks/abc145_a
 import sys
 input = sys.stdin.readline
 
