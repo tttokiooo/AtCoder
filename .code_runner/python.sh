@@ -1,2 +1,3 @@
 #!/bin/sh
-python3 $1 < ${PWD}/input.txt
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+python3 $1 < ${SCRIPT_DIR}/input.txt
