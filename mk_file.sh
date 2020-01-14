@@ -1,7 +1,13 @@
 #!/bin/bash
 
 base_url='https://atcoder.jp/contests'
-target=('ABCxxx')
+if [ ${@} ];then
+    target=${@}
+else
+    target=$(find . -name 'ABC[0-9]*' | sort -r | head -n 1)
+    target=$((${target#*ABC}+1))
+    echo ${target}
+fi
 
 for contest_key in ${target[@]}
 do
@@ -15,5 +21,6 @@ do
     for que in {a..d}
     do
         echo "# ${base_url}/${lower_conest}/tasks/${lower_conest}_${que}" > ${contest_key}/${que}.py
+        cat template.py >> ${contest_key}/${que}.py
     done
 done
