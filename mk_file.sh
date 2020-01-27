@@ -5,7 +5,7 @@ if [ ${@} ];then
     target=${@}
 else
     target=$(find . -name 'ABC[0-9]*' | sort -r | head -n 1)
-    target=$((${target#*ABC}+1))
+    target=ABC$((${target#*ABC}+1))
     echo ${target}
 fi
 
