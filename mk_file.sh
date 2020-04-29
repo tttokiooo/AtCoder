@@ -18,7 +18,7 @@ do
 
     mkdir ${contest_key}
     lower_conest=$(echo ${contest_key} | tr '[A-Z]' '[a-z]')
-    for que in {a..d}
+    for que in {a..e}
     do
         echo "# ${base_url}/${lower_conest}/tasks/${lower_conest}_${que}" > ${contest_key}/${que}.py
         cat template.py >> ${contest_key}/${que}.py
